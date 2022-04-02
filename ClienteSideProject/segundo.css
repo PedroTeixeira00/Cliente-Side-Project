@@ -1,0 +1,614 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+
+/* #region resetcss */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* #endregion resetcss */
+
+/* #region root */
+
+:root {
+    --slate: #1e293b;
+    --stone: #57534e;
+    --main: #64748b;
+    --head-cards: #64748b;
+    --blue: #1d4ed8;
+    --galleryBack:#64748b;
+    --primeiroCard: #4f46e5;
+    --segundoCard: #4338ca;
+    --terceiroCard: #3730a3;
+    --mobileAside:#334155;
+    --comentariosHover: #4f46e5;
+}
+
+/* #endregion root */
+
+/* #region body */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer"    
+    ;
+}
+
+.header-area {
+    grid-area: header;
+    background-color: aqua;
+    
+}
+
+.main-area {
+    grid-area: main;
+    background-color: black;
+}   
+
+.footer-area {
+    grid-area: footer;
+    background-color: var(--slate);
+}
+
+/* #endregion body */
+
+/* #region nav */
+
+nav {
+    width: 100%;
+    background-color: var(--slate);
+    padding-left: 30px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+  }
+  
+  .logo {
+    display: inline-block;
+    text-decoration: none;
+    color: aqua;
+    font-size: 30px;
+  }
+
+  .button {
+      background-color: aqua;
+      border-radius: 25px;
+      border: none;
+  }
+
+  .invicivel {
+      display: block;
+      background-color: aqua;
+      border: none;
+      font-size: 25px;
+      border-radius: 15px;
+  }
+
+  .invicivel a{
+    text-decoration: none;
+  }
+
+  
+  .nav-links {
+    list-style: none;
+    display: none;
+  }
+  
+  .nav-item a {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .nav-item:hover {
+    background-color: aqua;
+    border-radius: 25px;
+    transition: 0.9s ease;
+  }
+  
+  .nav-item:hover a {
+    color: darkblue;
+  }
+
+/* #endregion nav */
+
+
+/* #region main */
+
+main {
+    display: grid;
+    
+    grid-template-areas: 
+        "primeira"
+        "segunda"
+        "aside"
+    ;
+    ;
+}
+
+.primeira-area {
+    grid-area: primeira;
+    background-color: var(--galleryBack);
+    text-align: center;
+    padding: 10px;
+}
+
+.primeira h1{
+    color: rgb(48, 47, 47);
+}
+
+.segunda-area {
+    grid-area: segunda;
+    background-color: white;
+}
+
+.aside-area {
+    grid-area: aside;
+    background-color: white;
+}
+
+.segunda{
+    display: grid;
+    grid-template-areas: 
+        "one"
+        "two"
+        "three"
+        "four"
+        "five"
+        "six"
+    ;
+}
+
+.one-area {
+    grid-area: one;
+    
+}
+.two-area {
+    grid-area: two;
+    
+}
+.three-area {
+    grid-area: three;
+    
+}
+.four-area {
+    grid-area: four;
+    
+}
+.five-area {
+    grid-area: five;
+    
+}
+.six-area {
+    grid-area: six;
+    
+}
+
+/* #endregion main*/
+
+/* #region aside */
+
+.aside {
+    display: grid;
+    grid-template-areas: 
+        "comentarios"
+        "primeiroCard"
+        "segundoCard"
+        "terceiroCard"
+    ;
+    background-color: var(--slate);
+}
+
+.aside img{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+   
+}
+
+.aside p{
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+.comentarios-area {
+    grid-area: comentarios;
+
+}
+
+.comentario {
+    color: var(--blue);
+    text-align: center;
+    padding-top: 10px;
+}
+
+.primeiroCard-area {
+    grid-area: primeiroCard;
+    background-color: var(--terceiroCard);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7%;
+    margin: 10px 35px;
+    width: auto;
+    height: auto;
+}
+
+
+
+.segundoCard-area {
+    grid-area: segundoCard;
+    background-color: var(--terceiroCard);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7%;
+    margin: 10px 35px;
+    height: auto;
+    width: auto;
+}
+
+
+.terceiroCard-area {
+    grid-area: terceiroCard;
+    background-color: var(--terceiroCard);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 7%;
+    margin: 10px 35px;
+    height: auto;
+    width: auto;
+}
+
+.cardPerson {
+    font-size: 12px;
+    
+}
+
+.imagens img{
+    object-fit: cover;
+    height:100%;
+}
+
+
+
+/* #endregion aside */
+
+/* #region footer*/
+
+.footer {
+    padding-top: 25px;
+    display: grid;
+    grid-template-areas: 
+        "direcoes"
+        "redes"
+    ;
+}
+
+.direcoes-area {
+    grid-area: direcoes;
+
+}
+
+.redes-area {
+    grid-area: redes;
+}
+
+.redes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+}
+
+.redes button{
+    border-radius: 20px;
+    font-size: 20px;
+    width: 40px;
+    border: none;
+}
+
+.sub-redes {
+    padding-top: 15px;
+}
+
+.direcoes {
+    display: grid;
+    grid-template-areas: 
+        "horario morada"
+    ;
+}
+
+.horario-area {
+    grid-area: horario;
+}
+
+.horario p{
+    color: rgb(160, 146, 146);
+    text-align: center;
+}
+
+.morada-area {
+    grid-area: morada;
+}
+
+.morada {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.morada p{
+    color: rgb(160, 146, 146);
+    text-align: center;
+    
+}
+
+/* #endregion footer*/
+
+/* #region mediaquerys*/
+
+@media only screen and (min-width: 768px) {
+
+    .nav-links {
+        display: flex;
+    }
+
+    .invicivel {
+        display: none;
+    }
+
+    main {
+        display: grid;
+        
+        grid-template-areas: 
+            "primeira primeira aside"
+            "segunda segunda aside"
+            "segunda segunda aside"
+        ;
+        ;
+    }
+    
+    .primeira-area {
+        grid-area: primeira;
+        background-color: var(--galleryBack);
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .primeira h1{
+        color: rgb(48, 47, 47);
+    }
+    
+    .segunda-area {
+        grid-area: segunda;
+        background-color: white;
+    }
+    
+    .aside-area {
+        grid-area: aside;
+        background-color: white;
+    }
+    
+    .segunda{
+        display: grid;
+        grid-template-areas: 
+            "one two"
+            "three four"
+            "five six"
+            
+        ;
+    }
+    
+    
+
+    .one-area {
+        grid-area: one;
+        
+    }
+    .two-area {
+        grid-area: two;
+        
+    }
+    .three-area {
+        grid-area: three;
+        
+    }
+    .four-area {
+        grid-area: four;
+        
+    }
+    .five-area {
+        grid-area: five;
+        
+    }
+    .six-area {
+        grid-area: six;
+        
+    }
+    
+    /* #endregion main*/
+    
+    /* #region aside */
+    
+    .aside {
+        display: grid;
+        grid-template-areas: 
+            "comentarios"
+            "primeiroCard"
+            "segundoCard"
+            "terceiroCard"
+        ;
+        background-color:var(--mobileAside);
+        grid-template-rows: auto;
+        grid-auto-rows: 1fr;
+    }
+    
+    .aside img{
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+       
+    }
+    
+    .aside p{
+        color: white;
+        text-align: center;
+        padding: 10px;
+    }
+    
+    .comentarios-area {
+        grid-area: comentarios;
+    
+    }
+    
+    .comentario {
+        color: var(--blue);
+        text-align: center;
+        padding-top: 10px;
+    }
+    
+    .primeiroCard-area {
+        grid-area: primeiroCard;
+        background-color: var(--terceiroCard);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 7%;
+        margin: 10px 35px;
+        height: auto;
+        transition: 0.5s ease;
+    }
+
+    .primeiroCard-area:hover {
+        background-color: var(--comentariosHover);
+        
+    }
+    
+    .segundoCard-area {
+        grid-area: segundoCard;
+        background-color: var(--terceiroCard);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 7%;
+        margin: 10px 35px;
+        height: auto;
+        transition: 0.5s ease;
+    }
+    
+    .segundoCard-area:hover {
+        background-color: var(--comentariosHover);
+        
+    }
+
+    .terceiroCard-area {
+        grid-area: terceiroCard;
+        background-color: var(--terceiroCard);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-radius: 7%;
+        margin: 10px 35px;
+        height: auto;
+        transition: 0.5s ease;
+    }
+    
+    .terceiroCard-area:hover {
+        background-color: var(--comentariosHover);
+        
+    }
+    
+}
+
+/* #endregion mediaquerys*/

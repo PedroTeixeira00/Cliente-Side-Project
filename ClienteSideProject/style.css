@@ -1,0 +1,698 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+/* #region resetcss */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations and transitions for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* #endregion resetcss */
+
+/* #region root */
+
+:root {
+    --slate: #1e293b;
+    --stone: #57534e;
+    --main: #64748b;
+    --head-cards: #64748b;
+    --blue: #1d4ed8;
+    --primeiroCard: #4f46e5;
+    --segundoCard: #4338ca;
+    --terceiroCard: #3730a3;
+    --cardHover: #3b82f6;
+}
+
+
+
+/* #endregion root */
+
+/* #region body */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    display: grid;
+
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer"    
+    ;
+}
+
+.header-area {
+    grid-area: header;
+    background-color: aqua;
+    
+}
+
+.main-area {
+    grid-area: main;
+    background-color: black;
+}   
+
+.footer-area {
+    grid-area: footer;
+    background-color: var(--slate);
+}
+
+/* #endregion body */
+
+/* #region nav */
+
+nav {
+    width: 100%;
+    background-color: var(--slate);
+    padding-left: 30px;
+    padding-right: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+  }
+
+  .logo {
+    display: inline-block;
+    text-decoration: none;
+    color: aqua;
+    font-size: 30px;
+  }
+
+  .button {
+      background-color: aqua;
+      border-radius: 25px;
+      border: none;
+  }
+
+  .invicivel {
+        display: block;
+      background-color: aqua;
+      border: none;
+      font-size: 25px;
+      border-radius: 15px;
+    }
+
+    .invicivel a{
+        text-decoration: none;
+    }
+
+
+
+  .button:hover {
+      background-color: white;
+      color: darkgreen;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  
+  .nav-item a {
+    display: inline-block;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+  }
+  
+  .nav-item:hover {
+    background-color: aqua;
+    border-radius: 25px;
+    transition: 0.9s ease;
+  }
+  
+  .nav-item:hover a {
+    color: darkblue;
+  }
+
+  .nav-links {
+      display: none;
+  }
+
+/* #endregion nav */
+
+
+/* #region main */
+
+main {
+    display: grid;
+    grid-template-areas: 
+        "primeiro"
+        "segundo"
+    
+    ;
+    
+}
+
+
+/* #region areasprincipais */
+
+.primeiro-area {
+    grid-area: primeiro;
+    background-color: white;
+
+}
+
+
+
+.segund-area{
+    grid-area: segundo;
+    background-color: blueviolet;
+    
+}
+
+.primeiro {
+    display: flex;
+    flex-direction: column;
+    background-image: url(/img/bg2new1.jpg);
+    background-size: cover;
+    background-position: center center;
+    
+    
+}
+
+
+.primeiro h1{
+    
+    height: auto;
+    padding: 20px;
+    color: var(--blue);
+}
+.primeiro p{
+    padding: 20px;
+    
+}
+
+
+
+.segundo {
+    display: grid;
+    grid-template-areas: 
+        "head"
+        "cards"
+    ;
+}
+
+/* #endregion areasprincipais */
+
+/* #region areasSecundarias */
+
+.head-area {
+    grid-area: head;
+    background-color: var(--slate);
+}
+.cards-area {
+    grid-area: cards;
+    background-color: var(--slate);
+}
+
+.head h1{
+    color: var(--blue);
+    text-align: center;
+    padding: 15px;
+}
+
+/* #endregion areasSecundarias */
+
+/* #region cards*/
+.cards {
+    display: grid;
+    grid-template-areas: 
+            "primeiroCard"
+            "segundoCard"
+            "terceiroCard"
+    ;
+}
+
+.packs {
+    padding: 20px;
+}
+
+.packs p{
+    color: white;
+    text-align: center;
+}
+
+.primeiro-card-area {
+    grid-area: primeioCard;
+    background-color: var(--primeiroCard);
+    border-radius: 7%;
+    margin: 15px;
+    
+}
+
+.segundo-card-area {
+    grid-area: segundoCard;
+    background-color: var(--segundoCard);
+    border-radius: 7%;
+    margin: 15px;
+}
+
+.terceiro-card-area {
+    grid-area: terceiroCard;
+    background-color: var(--terceiroCard);
+    border-radius: 7%;
+    margin: 15px;
+}
+
+.card {
+    display: grid;
+    grid-template-areas:
+        "nome"
+        "conteudo"
+        "preco"
+        /* "button" */
+    ;
+
+}
+
+.card img{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.nome-area {
+    grid-area: nome;
+    color: white;
+    padding: 3px;
+    text-align: center;
+}
+
+.nome-area p{
+    padding-bottom: 4px;
+    
+}
+
+.conteudo-area {
+    grid-area: conteudo;
+    color: #1e293b;
+}
+
+.preco-area {
+    grid-area: preco;
+    color: white;
+    padding: 3px;
+    text-align: center;
+}
+
+.preco-area p{
+    font-size: 23px;
+}
+
+.preco-area button{
+    
+    width: 115px;
+    font-size: 20px;
+    border-radius: 25px;
+    text-align: center;
+    padding: 10px;
+    background-color: var(--slate);
+    color: white;
+    margin-bottom: 7px;
+    border: none;
+
+}
+
+
+
+
+
+
+/* #endregion cards */
+
+
+/* #endregion main */
+
+
+/* #region footer*/
+
+.footer {
+    display: grid;
+    grid-template-areas: 
+        "direcoes"
+        "redes"
+    ;
+}
+
+.direcoes-area {
+    grid-area: direcoes;
+
+}
+
+.redes-area {
+    grid-area: redes;
+}
+
+.redes {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    padding: 20px;
+}
+
+.redes button{
+    border-radius: 20px;
+    font-size: 20px;
+    width: 40px;
+    border: none;
+}
+
+.sub-redes {
+    padding-top: 15px;
+}
+
+.direcoes {
+    display: grid;
+    grid-template-areas: 
+        "horario morada"
+    ;
+}
+
+.horario-area {
+    grid-area: horario;
+}
+
+.horario p{
+    color: rgb(160, 146, 146);
+    text-align: center;
+}
+
+.morada-area {
+    grid-area: morada;
+}
+
+.morada {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.morada p{
+    color: rgb(160, 146, 146);
+    text-align: center;
+    
+}
+
+/* #endregion footer*/
+
+
+
+/* #region mediaquerys*/
+
+@media only screen and (min-width: 768px) {
+
+    .invicivel {
+        display: none;
+    }
+
+    .nav-links{
+        display: flex;
+    }
+
+    main {
+        display: grid;
+        grid-template-areas: 
+            "primeiro"
+            "segundo"
+        
+        ;
+    }
+    
+    /* #region areasprincipais */
+    
+    .primeiro-area {
+        grid-area: primeiro;
+        background-color: white;
+    
+    }
+    
+    
+    
+    .segund-area{
+        grid-area: segundo;
+        
+        
+    }
+    
+    .primeiro {
+        display: grid;
+        grid-template-areas: 
+            "titulo texto texto"
+            "titulo texto texto"
+            "titulo texto texto"
+        ;
+        background-image: url(/img/bg2new1.jpg);
+        background-size: cover;
+        background-position: center center;
+        
+        
+    }
+    
+    .titulo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .primeiro h1{
+        
+        height: auto;
+        padding: 20px;
+        color: var(--blue);
+    }
+    .primeiro p{
+        padding: 20px;
+        
+    }
+    
+    
+    
+    .segundo {
+        display: grid;
+        grid-template-areas: 
+            "head"
+            "cards"
+        ;
+    }
+    
+    /* #endregion areasprincipais */
+    
+    /* #region areasSecundarias */
+    
+    .head-area {
+        grid-area: head;
+        background-color: var(--slate);
+    }
+    .cards-area {
+        grid-area: cards;
+        background-color: var(--slate);
+    }
+    
+    .head h1{
+        color: var(--blue);
+        text-align: center;
+        padding: 15px;
+    }
+    
+    /* #endregion areasSecundarias */
+    
+    /* #region cards*/
+    
+    .packs {
+        /* display: grid;
+        grid-template-areas: 
+            "primeiroCard segundoCard terceiroCard"
+            "primeiroCard segundoCard terceiroCard"
+            "primeiroCard segundoCard terceiroCard"
+            "primeiroCard segundoCard terceiroCard"
+        ; */
+
+        display:flex ;
+        flex-direction: row;
+        ;
+
+    }
+    
+    .packs p{
+        color: white;
+        text-align: center;
+    }
+
+    
+    
+    .primeiro-card-area {
+        height: 350px;
+        flex: 1;
+        width: auto;
+        background-color: var(--terceiroCard);
+        border-radius: 10%;
+        margin: 15px;
+        
+    }
+    
+    .segundo-card-area {
+        flex: 1;
+        background-color: var(--terceiroCard);
+        border-radius: 10%;
+        margin: 15px;
+    }
+    
+    .terceiro-card-area {
+        flex: 1;
+        background-color: var(--terceiroCard);
+        border-radius: 10%;
+        margin: 15px;
+    }
+    
+    .card {
+        display: grid;
+        grid-template-areas:
+            "nome"
+            "conteudo"
+            "preco"
+            /* "button" */
+        ;
+    
+    }
+    
+    .card:hover {
+        background-color: #4338ca;
+        transition: 0.5s ease;
+    }
+
+    
+
+    
+
+    .nome-area {
+        grid-area: nome;
+        color: white;
+        padding: 3px;
+        text-align: center;
+    }
+    
+    .nome-area p{
+        padding-bottom: 4px;
+        
+    }
+    
+    .conteudo-area {
+        grid-area: conteudo;
+        color: #1e293b;
+    }
+    
+    .preco-area {
+        grid-area: preco;
+        color: white;
+        padding: 3px;
+        text-align: center;
+    }
+    
+    .preco-area p{
+        font-size: 23px;
+        
+    }
+    
+    .preco-area button{
+        
+        width: 115px;
+        font-size: 20px;
+        border-radius: 25px;
+        /* text-align: center; */
+        background-color: var(--slate);
+        color: white;
+        transition: 0.5s ease;
+        margin-bottom: 7px;
+        border: none;
+    
+    }
+    
+    
+    .preco-area button:hover {
+        background-color: #334155;
+        
+    }
+    
+    
+    
+    /* #endregion cards */
+    
+}
+
+/* #endregion mediaquerys*/
+
+
